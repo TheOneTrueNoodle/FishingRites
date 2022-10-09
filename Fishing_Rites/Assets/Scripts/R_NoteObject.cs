@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class R_NoteObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float length;
+    public float WaitTime;
+    public Vector3 StartPos;
+    [SerializeField] private GameObject TopNote;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        gameObject.transform.position = StartPos;
+        TopNote.transform.position = new Vector3(StartPos.x, StartPos.y + length, StartPos.z);  
     }
 }
