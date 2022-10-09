@@ -6,5 +6,6 @@ using UnityEngine;
 public class R_Note
 {
     public float Length;
+    public float NoteSpeed;
     public float WaitTime;
 }
