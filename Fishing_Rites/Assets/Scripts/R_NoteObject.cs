@@ -7,7 +7,8 @@ public class R_NoteObject : MonoBehaviour
     public float length;
     public float speed;
     public Vector3 StartPos;
-    [SerializeField] private GameObject TopNote;
+    public GameObject BottomNote;
+    public GameObject TopNote;
     private Vector3 NextPos;
 
     public LineRenderer LineRenderer;
