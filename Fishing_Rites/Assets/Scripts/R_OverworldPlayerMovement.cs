@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class R_OverworldPlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool CanMove;
+
+    //Variables for Controls
+    private Vector2 MoveInput;
+    private Vector2 moveDirection;
+
+    //Speed Variables
+    public float moveSpeed = 5f;
+    private float currentSpeed;
+    public Rigidbody2D rb;
+
+    private void Start()
     {
-        
+        CanMove = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        MoveInput.x = Input.GetAxisRaw("Horizontal");
+        MoveInput.y = Input.GetAxisRaw("Vertical");
+    }
+
+    private void FixedUpdate()
+    {
+        if(CanMove == true)
+        {
+            moveDirection = MoveInput.normalized;
+
+            rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
+        }
     }
 }
