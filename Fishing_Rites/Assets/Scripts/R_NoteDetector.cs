@@ -26,17 +26,23 @@ public class R_NoteDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(Active == true)
+        if(collision.tag == "Note")
         {
-            if (collision.tag == "Note")
-            {
-                CurrentNote = collision.transform.parent.GetComponent<R_NoteObject>();
+            CurrentNote = collision.transform.parent.GetComponent<R_NoteObject>();
+        }
+    }
 
-                if (Vector3.Distance(transform.position, CurrentNote.BottomNote.transform.position) <= CloseRange)
-                {
-                    NoteHeld = true;
-                    NoteManager.IncreaseScore(NoteValue);
-                }
+    public void Pressed()
+    {
+        BeatMarker.gameObject.SetActive(false);
+        Active = true; 
+        if(CurrentNote != null)
+        {
+            if (Vector3.Distance(transform.position, CurrentNote.BottomNote.transform.position) <= CloseRange)
+            {
+                NoteHeld = true;
+                CurrentNote.NoteHeld = true;
+                NoteManager.IncreaseScore(NoteValue);
             }
         }
     }
@@ -65,8 +71,7 @@ public class R_NoteDetector : MonoBehaviour
     {
         if (Input.GetKeyDown(BeatPress) || Input.GetKeyDown(BeatPress2))
         {
-            BeatMarker.gameObject.SetActive(false);
-            Active = true;
+            Pressed();
         }
         else if (Input.GetKeyUp(BeatPress) || Input.GetKeyUp(BeatPress2))
         {

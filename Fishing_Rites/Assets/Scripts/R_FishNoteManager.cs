@@ -13,7 +13,7 @@ public class R_FishNoteManager : MonoBehaviour
     public Queue<IEnumerator> NoteQueue = new Queue<IEnumerator>();
 
     [Header("Score Variables")]
-    public float Score;
+    public int Score;
     public float Multiplier;
     [Header("Score Displays")]
     public TMP_Text ScoreDisplay;
@@ -34,7 +34,7 @@ public class R_FishNoteManager : MonoBehaviour
 
     public void IncreaseScore(float Num)
     {
-        Score += Num * Multiplier;
+        Score += (int)(Num * Multiplier);
         ScoreDisplay.text = "Score: " + Score.ToString();
     }
 

@@ -43,8 +43,11 @@ public class R_NoteObject : MonoBehaviour
         {
             NoteFailed();
         }
+    }
 
-        if(NoteHeld == true)
+    private void FixedUpdate()
+    {
+        if (NoteHeld == true)
         {
             NoteManager.IncreaseScore(1f);
         }
