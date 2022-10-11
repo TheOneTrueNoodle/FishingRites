@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2357419519865653455}
   m_Layer: 0
   m_Name: NoteObject
-  m_TagString: Untagged
+  m_TagString: Note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,6 +53,7 @@ MonoBehaviour:
   BottomNote: {fileID: 2357419520201160368}
   TopNote: {fileID: 2357419520997708051}
   LineRenderer: {fileID: 8643451781840557379}
+  NoteHeld: 0
 --- !u!1 &2357419520201160368
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,9 +65,10 @@ GameObject:
   - component: {fileID: 2357419520201160375}
   - component: {fileID: 2357419520201160374}
   - component: {fileID: 2599529086063805473}
+  - component: {fileID: 4180260994090185279}
   m_Layer: 0
   m_Name: NoteBottomPart
-  m_TagString: Untagged
+  m_TagString: Note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +156,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!50 &4180260994090185279
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2357419520201160368}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2357419520997708051
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,9 +188,10 @@ GameObject:
   - component: {fileID: 2357419520997708049}
   - component: {fileID: 2357419520997708050}
   - component: {fileID: 2090457026237758028}
+  - component: {fileID: 2596935772334716749}
   m_Layer: 0
   m_Name: NoteTopPart
-  m_TagString: Untagged
+  m_TagString: Note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,6 +279,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!50 &2596935772334716749
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2357419520997708051}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8405849140362098262
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +312,7 @@ GameObject:
   - component: {fileID: 8643451781840557379}
   m_Layer: 0
   m_Name: Line
-  m_TagString: Untagged
+  m_TagString: Note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
