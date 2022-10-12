@@ -519,9 +519,9 @@ MonoBehaviour:
   - Length: 1
     NoteSpeed: 2
     WaitTime: 1
-  - Length: 1
+  - Length: 5
     NoteSpeed: 2
-    WaitTime: 1
+    WaitTime: 3
   - Length: 1
     NoteSpeed: 2
     WaitTime: 1

@@ -52,11 +52,11 @@ public class R_FishNoteManager : MonoBehaviour
 
     private IEnumerator SpawnNote(R_Note Note)
     {
-        yield return new WaitForSeconds(Note.WaitTime);
         GameObject NewNote = Instantiate(NotePrefab);
         NewNote.GetComponent<R_NoteObject>().length = Note.Length;
         NewNote.GetComponent<R_NoteObject>().speed = Note.NoteSpeed;
         NewNote.GetComponent<R_NoteObject>().StartPos = transform.position;
+        yield return new WaitForSeconds(Note.WaitTime);
     }
 
     IEnumerator CoroutineCoordinator()

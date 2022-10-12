@@ -24,7 +24,7 @@ public class R_NoteObject : MonoBehaviour
         NoteManager = FindObjectOfType<R_FishNoteManager>();
 
         gameObject.transform.position = StartPos;
-        NextPos = new Vector3(StartPos.x, -6f, StartPos.z);
+        NextPos = new Vector3(StartPos.x, -6f - length, StartPos.z);
         TopNote.transform.position = new Vector3(StartPos.x, StartPos.y + length, StartPos.z);
 
         Vector3[] LinePositions = new Vector3[2] { new Vector3(0,0,0), TopNote.transform.position - transform.position};
