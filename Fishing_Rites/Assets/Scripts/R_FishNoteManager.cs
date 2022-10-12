@@ -5,8 +5,6 @@ using TMPro;
 
 public class R_FishNoteManager : MonoBehaviour
 {
-    [SerializeField] private float BoundingDistance = 7.5f;
-
     public GameObject NotePrefab;
     [SerializeField] public List<R_Note> Notes;
 

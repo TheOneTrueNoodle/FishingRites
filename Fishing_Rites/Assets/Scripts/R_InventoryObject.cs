@@ -9,9 +9,8 @@ public class R_InventoryObject : MonoBehaviour
     [Header("Drag and Drop values")]
     private Vector3 dragOffset;
     private Camera cam;
-    public List<GameObject> RitualSlot;
+    public List<R_RitualSlot> RitualSlot;
     [SerializeField] float speed = 15f;
-    [SerializeField] float LockOnDistance = 1.5f;
 
     private R_InventoryManager IM;
 
@@ -28,7 +27,7 @@ public class R_InventoryObject : MonoBehaviour
         IM = FindObjectOfType<R_InventoryManager>();
     }
 
-    public void SetDetails(Sprite nSprite, R_Item nItem, List<GameObject> RitualSlots)
+    public void SetDetails(Sprite nSprite, R_Item nItem, List<R_RitualSlot> RitualSlots)
     {
         GetComponent<Image>().sprite = nSprite;
         Item = nItem;
@@ -50,11 +49,17 @@ public class R_InventoryObject : MonoBehaviour
     {
         for(int i = 0; i < RitualSlot.Count; i++)
         {
-            if (Vector3.Distance(RitualSlot[i].transform.position, GetMousePos()) <= LockOnDistance)
+            if (rectOverlaps(gameObject.GetComponent<RectTransform>(), RitualSlot[i].gameObject.GetComponent<RectTransform>()))
             {
-                //Do code to remove from inventory and put into the ritual slot
-                IM.Items.Remove(Item);
-                IM.UpdateInventory();
+                if(RitualSlot[i].RequiredItem == Item.Type)
+                {
+                    //Do code to remove from inventory and put into the ritual slot
+                    IM.Items.Remove(Item);
+                    IM.CurrentSlots.Remove(transform.parent.gameObject);
+                    RitualSlot[i].AssignItem(Item);
+                    IM.RemoveItems();
+                    Destroy(transform.parent.gameObject);
+                }
             }
             else
             {
@@ -63,6 +68,15 @@ public class R_InventoryObject : MonoBehaviour
             }
         }
     }
+
+    bool rectOverlaps(RectTransform rectTrans1, RectTransform rectTrans2)
+    {
+        Rect rect1 = new Rect(rectTrans1.localPosition.x, rectTrans1.localPosition.y, rectTrans1.rect.width, rectTrans1.rect.height);
+        Rect rect2 = new Rect(rectTrans2.localPosition.x, rectTrans2.localPosition.y, rectTrans2.rect.width, rectTrans2.rect.height);
+
+        return rect1.Overlaps(rect2);
+    }
+
     Vector3 GetMousePos()
     {
         var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);

@@ -12,7 +12,8 @@ public class R_InventoryManager : MonoBehaviour
     [SerializeField] private GameObject InventorySlotPrefab;
 
     [Header("Ritual Slots")]
-    public List<GameObject> RitualSlot;
+    public List<R_RitualSlot> RitualSlot;
+    public List<GameObject> CurrentSlots = new List<GameObject>();
 
     private void Start()
     {
@@ -24,9 +25,20 @@ public class R_InventoryManager : MonoBehaviour
         for (int i = 0; i < Items.Count; i++)
         {
             GameObject Item = Instantiate(InventorySlotPrefab);
+            CurrentSlots.Add(Item);
             Item.name = Items[i].ItemName;
             Item.transform.SetParent(ItemParent.transform, false);
             Item.GetComponentInChildren<R_InventoryObject>().SetDetails(Items[i].ItemSprite, Items[i], RitualSlot);
         }
+    }
+
+    public void RemoveItems()
+    {
+        foreach (GameObject slot in CurrentSlots)
+        {
+            Destroy(slot.gameObject);
+        }
+        CurrentSlots.Clear();
+        UpdateInventory();
     }
 }

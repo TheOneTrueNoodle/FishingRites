@@ -10,7 +10,6 @@ public class R_NoteDetector : MonoBehaviour
     [SerializeField] private R_NoteObject CurrentNote;
 
     public float CloseRange = 1f;
-    private bool NoteHeld;
 
     [SerializeField] private float NoteValue;
 
@@ -40,7 +39,6 @@ public class R_NoteDetector : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, CurrentNote.BottomNote.transform.position) <= CloseRange)
             {
-                NoteHeld = true;
                 CurrentNote.NoteHeld = true;
                 NoteManager.IncreaseScore(NoteValue);
             }
@@ -51,7 +49,6 @@ public class R_NoteDetector : MonoBehaviour
     {
         if (CurrentNote != null)
         {
-            NoteHeld = false;
             if (Vector3.Distance(transform.position, CurrentNote.TopNote.transform.position) <= CloseRange)
             {
                 NoteManager.IncreaseScore(NoteValue);
