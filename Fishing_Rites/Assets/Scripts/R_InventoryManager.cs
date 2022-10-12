@@ -19,14 +19,14 @@ public class R_InventoryManager : MonoBehaviour
         UpdateInventory();
     }
 
-    private void UpdateInventory()
+    public void UpdateInventory()
     {
         for (int i = 0; i < Items.Count; i++)
         {
             GameObject Item = Instantiate(InventorySlotPrefab);
             Item.name = Items[i].ItemName;
             Item.transform.SetParent(ItemParent.transform, false);
-            Item.GetComponentInChildren<R_InventoryObject>().SetDetails(Items[i].ItemSprite, Items[i]);
+            Item.GetComponentInChildren<R_InventoryObject>().SetDetails(Items[i].ItemSprite, Items[i], RitualSlot);
         }
     }
 }

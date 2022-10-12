@@ -9,9 +9,11 @@ public class R_InventoryObject : MonoBehaviour
     [Header("Drag and Drop values")]
     private Vector3 dragOffset;
     private Camera cam;
-    [HideInInspector] public List<GameObject> RitualSlot;
+    public List<GameObject> RitualSlot;
     [SerializeField] float speed = 15f;
     [SerializeField] float LockOnDistance = 1.5f;
+
+    private R_InventoryManager IM;
 
     //Item Information
     public R_Item Item;
@@ -21,10 +23,16 @@ public class R_InventoryObject : MonoBehaviour
         cam = Camera.main;
     }
 
-    public void SetDetails(Sprite nSprite, R_Item nItem)
+    private void Start()
+    {
+        IM = FindObjectOfType<R_InventoryManager>();
+    }
+
+    public void SetDetails(Sprite nSprite, R_Item nItem, List<GameObject> RitualSlots)
     {
         GetComponent<Image>().sprite = nSprite;
         Item = nItem;
+        RitualSlot = RitualSlots;
     }
 
     private void OnMouseDown()
@@ -40,22 +48,20 @@ public class R_InventoryObject : MonoBehaviour
 
     private void OnMouseUp()
     {
-        /*for(int i = 0; i < RitualSlot.Count; i++)
+        for(int i = 0; i < RitualSlot.Count; i++)
         {
-            if (Vector3.Distance(RitualSlot[i].gameObject.transform.position, GetMousePos()) <= LockOnDistance)
+            if (Vector3.Distance(RitualSlot[i].transform.position, GetMousePos()) <= LockOnDistance)
             {
                 //Do code to remove from inventory and put into the ritual slot
+                IM.Items.Remove(Item);
+                IM.UpdateInventory();
             }
             else
             {
-                transform.position = InventoryPosition;
+                transform.localPosition = new Vector3(0, 0, 0);
                 GetComponent<Image>().maskable = true;
             }
-            transform.position = InventoryPosition;
-            GetComponent<Image>().maskable = true;
-        }*/
-        transform.localPosition = new Vector3(0, 0, 0);
-        GetComponent<Image>().maskable = true;
+        }
     }
     Vector3 GetMousePos()
     {
