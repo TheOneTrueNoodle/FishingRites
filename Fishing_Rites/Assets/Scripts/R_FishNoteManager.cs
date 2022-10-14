@@ -17,14 +17,11 @@ public class R_FishNoteManager : MonoBehaviour
     public TMP_Text ScoreDisplay;
     public TMP_Text MultiplierDisplay;
 
+    public GameObject FishSpriteParent;
+
     private void Start()
     {
-        StartCoroutine(CoroutineCoordinator());
-
-        foreach(R_Note Note in Notes)
-        {
-            NoteQueue.Enqueue(SpawnNote(Note));
-        }
+        StartCoroutine(StartCoordinator());
 
         ScoreDisplay.text = "Score: " + Score.ToString();
         MultiplierDisplay.text = "x" + Multiplier.ToString();
@@ -48,6 +45,24 @@ public class R_FishNoteManager : MonoBehaviour
         MultiplierDisplay.text = "x" + Multiplier.ToString();
     }
 
+    public void LoadFish(R_Fish Fish)
+    {
+        GameObject FishCharacter = Instantiate(Fish.FishToFightPrefab);
+        FishCharacter.transform.parent = FishSpriteParent.transform;
+        FishCharacter.transform.localPosition = Vector3.zero;
+
+        Notes.Clear();
+        for(int i = 0; i < Fish.Notes.Count; i++)
+        {
+            Notes.Add(Fish.Notes[i]);
+        }
+
+        foreach (R_Note Note in Notes)
+        {
+            NoteQueue.Enqueue(SpawnNote(Note));
+        }
+    }
+
     private IEnumerator SpawnNote(R_Note Note)
     {
         GameObject NewNote = Instantiate(NotePrefab);
@@ -55,6 +70,12 @@ public class R_FishNoteManager : MonoBehaviour
         NewNote.GetComponent<R_NoteObject>().speed = Note.NoteSpeed;
         NewNote.GetComponent<R_NoteObject>().StartPos = transform.position;
         yield return new WaitForSeconds(Note.WaitTime);
+    }
+
+    IEnumerator StartCoordinator()
+    {
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(CoroutineCoordinator());
     }
 
     IEnumerator CoroutineCoordinator()

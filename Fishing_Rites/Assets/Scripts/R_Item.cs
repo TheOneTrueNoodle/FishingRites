@@ -8,6 +8,9 @@ public class R_Item
     public string ItemName;
     public ItemType Type;
     public Sprite ItemSprite;
+    public int ItemNum;
+
+    public object GameObject { get; internal set; }
 }
 
 public enum ItemType

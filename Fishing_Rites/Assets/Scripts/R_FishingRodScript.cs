@@ -6,12 +6,7 @@ public class R_FishingRodScript : MonoBehaviour
 {
     [SerializeField] private float BoundingDistance = 7.5f;
 
-    private Camera cam;
-
-    private void Start()
-    {
-        cam = Camera.main;
-    }
+    public Camera cam;
 
     private void Update()
     {

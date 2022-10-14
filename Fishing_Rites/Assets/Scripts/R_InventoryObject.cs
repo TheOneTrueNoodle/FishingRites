@@ -12,7 +12,7 @@ public class R_InventoryObject : MonoBehaviour
     public List<R_RitualSlot> RitualSlot;
     [SerializeField] float speed = 15f;
 
-    private R_InventoryManager IM;
+    public R_InventoryManager IM;
 
     //Item Information
     public R_Item Item;
@@ -27,10 +27,11 @@ public class R_InventoryObject : MonoBehaviour
         IM = FindObjectOfType<R_InventoryManager>();
     }
 
-    public void SetDetails(Sprite nSprite, R_Item nItem, List<R_RitualSlot> RitualSlots)
+    public void SetDetails(Sprite nSprite, R_Item nItem, List<R_RitualSlot> RitualSlots, int num)
     {
         GetComponent<Image>().sprite = nSprite;
         Item = nItem;
+        Item.ItemNum = num;
         RitualSlot = RitualSlots;
     }
 
@@ -51,14 +52,14 @@ public class R_InventoryObject : MonoBehaviour
         {
             if (rectOverlaps(gameObject.GetComponent<RectTransform>(), RitualSlot[i].gameObject.GetComponent<RectTransform>()))
             {
-                if(RitualSlot[i].RequiredItem == Item.Type)
+                if(RitualSlot[i].RequiredItem == Item.Type && RitualSlot[i].HasItem == false)
                 {
                     //Do code to remove from inventory and put into the ritual slot
-                    IM.Items.Remove(Item);
-                    IM.CurrentSlots.Remove(transform.parent.gameObject);
                     RitualSlot[i].AssignItem(Item);
-                    IM.RemoveItems();
+                    IM.UpdateFishHunt();
+                    IM.RemoveItem(Item);
                     Destroy(transform.parent.gameObject);
+                    break;
                 }
             }
             else
