@@ -23,6 +23,12 @@ public class R_FishNoteManager : MonoBehaviour
     {
         StartCoroutine(StartCoordinator());
 
+
+        foreach (R_Note Note in Notes)
+        {
+            NoteQueue.Enqueue(SpawnNote(Note));
+        }
+
         ScoreDisplay.text = "Score: " + Score.ToString();
         MultiplierDisplay.text = "x" + Multiplier.ToString();
     }
