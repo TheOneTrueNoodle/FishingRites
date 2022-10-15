@@ -25,9 +25,11 @@ public class R_NoteDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if(collision.tag == "Note")
         {
             CurrentNote = collision.transform.parent.GetComponent<R_NoteObject>();
+
         }
     }
 

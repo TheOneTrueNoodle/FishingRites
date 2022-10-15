@@ -82,6 +82,8 @@ public class R_FishNoteManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         StartCoroutine(CoroutineCoordinator());
+        FindObjectOfType<AudioManager>().Play("Fish1");
+
     }
 
     IEnumerator CoroutineCoordinator()
