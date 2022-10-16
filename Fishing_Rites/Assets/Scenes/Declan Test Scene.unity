@@ -393,11 +393,8 @@ MonoBehaviour:
   NotePrefab: {fileID: 2357419519865653448, guid: fc09672136bdf8c4f8c216143dc5eab7, type: 3}
   Notes:
   - Length: 2
-    NoteSpeed: 10
+    NoteSpeed: 20
     WaitTime: 0.5
-  - Length: 2
-    NoteSpeed: 10
-    WaitTime: 2
   - Length: 2
     NoteSpeed: 10
     WaitTime: 0.5
@@ -411,13 +408,19 @@ MonoBehaviour:
     NoteSpeed: 10
     WaitTime: 1
   - Length: 2
-    NoteSpeed: 15
+    NoteSpeed: 10
+    WaitTime: 0.5
+  - Length: 2
+    NoteSpeed: 10
+    WaitTime: 1
+  - Length: 2
+    NoteSpeed: 12
     WaitTime: 0.4
   - Length: 2
-    NoteSpeed: 15
+    NoteSpeed: 12
     WaitTime: 0.4
   - Length: 2
-    NoteSpeed: 15
+    NoteSpeed: 12
     WaitTime: 1.2
   - Length: 2
     NoteSpeed: 10
@@ -461,7 +464,7 @@ MonoBehaviour:
   - Length: 8
     NoteSpeed: 10
     WaitTime: 1.5
-  - Length: 8
+  - Length: 10
     NoteSpeed: 10
     WaitTime: 1.5
   Score: 0
