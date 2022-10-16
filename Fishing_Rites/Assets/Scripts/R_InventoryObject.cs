@@ -56,8 +56,8 @@ public class R_InventoryObject : MonoBehaviour
                 {
                     //Do code to remove from inventory and put into the ritual slot
                     RitualSlot[i].AssignItem(Item);
-                    IM.UpdateFishHunt();
                     IM.RemoveItem(Item);
+                    IM.UpdateFishHunt();
                     Destroy(transform.parent.gameObject);
                     break;
                 }

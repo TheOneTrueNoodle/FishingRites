@@ -37,7 +37,11 @@ public class R_InventoryManager : MonoBehaviour
 
     public void UpdateFishHunt()
     {
-        for(int i = 0; i < Fish.Count; i++)
+        FishSprite.sprite = null;
+        FoundFish = false;
+        FishToHunt = null;
+
+        for (int i = 0; i < Fish.Count; i++)
         {
             int ItemsRequired = Fish[i].RequiredItems.Count;
             for(int j = 0; j < RitualSlot.Count; j++)
@@ -57,11 +61,18 @@ public class R_InventoryManager : MonoBehaviour
                 FishSprite.sprite = Fish[i].FishSprite;
                 break;
             }
+            else
+            {
+                FishSprite.sprite = null;
+                FoundFish = false;
+                FishToHunt = null;
+            }
         }
     }
 
     public void UpdateInventory()
     {
+        UpdateFishHunt();
         for (int i = 0; i < Items.Count; i++)
         {
             GameObject Item = Instantiate(InventorySlotPrefab);
@@ -76,17 +87,24 @@ public class R_InventoryManager : MonoBehaviour
     {
         FindObjectOfType<R_OverworldPlayerMovement>().CanMove = false;
         InventoryUI.SetActive(true);
-        InventoryActive = true; 
-        foreach (R_RitualSlot rSlot in RitualSlot)
+        InventoryActive = true;
+
+        int NumLoops = RitualSlot.Count;
+
+        for (int i = 0; i < NumLoops; i++)
         {
-            rSlot.RemoveItem();
+            RitualSlot[0].RemoveItem();
         }
 
-        foreach (GameObject slot in CurrentSlots)
+        NumLoops = CurrentSlots.Count;
+
+        for (int i = 0; i < NumLoops; i++)
         {
-            CurrentSlots.Remove(slot);
-            Destroy(slot);
+            GameObject obj = CurrentSlots[0];
+            CurrentSlots.Remove(CurrentSlots[0]);
+            Destroy(obj);
         }
+
         UpdateInventory();
     }
     public void CloseInventroy()
@@ -95,17 +113,23 @@ public class R_InventoryManager : MonoBehaviour
         InventoryUI.SetActive(false);
         InventoryActive = false;
 
-        foreach (R_RitualSlot rSlot in RitualSlot)
+        int NumLoops = RitualSlot.Count;
+
+        for (int i = 0; i < NumLoops; i++)
         {
-            rSlot.RemoveItem();
+            RitualSlot[0].RemoveItem();
         }
 
-        foreach (GameObject slot in CurrentSlots)
+        NumLoops = CurrentSlots.Count;
+
+        for (int i = 0; i < NumLoops; i++)
         {
-            CurrentSlots.Remove(slot);
-            Destroy(slot);
+            GameObject obj = CurrentSlots[0];
+            CurrentSlots.Remove(CurrentSlots[0]);
+            Destroy(obj);
         }
-        FishToHunt.FishSprite = null;
+
+        FishSprite.sprite = null;
         FoundFish = false;
         FishToHunt = null;
     }
@@ -113,22 +137,32 @@ public class R_InventoryManager : MonoBehaviour
     public void RemoveItem(R_Item Item)
     {
         Items.RemoveAt(Item.ItemNum);
-        foreach (GameObject slot in CurrentSlots)
+
+        int NumLoops = CurrentSlots.Count;
+
+        for (int i = 0; i < NumLoops; i++)
         {
-            Destroy(slot);
+            GameObject obj = CurrentSlots[0];
+            CurrentSlots.Remove(CurrentSlots[0]);
+            Destroy(obj);
         }
         CurrentSlots.Clear();
         UpdateInventory();
-        UpdateFishHunt();
     }
 
     public void AddItem(R_Item Item)
     {
         Items.Add(Item);
-        foreach (GameObject slot in CurrentSlots)
+
+        int NumLoops = CurrentSlots.Count;
+
+        for (int i = 0; i < NumLoops; i++)
         {
-            Destroy(slot);
+            GameObject obj = CurrentSlots[0];
+            CurrentSlots.Remove(CurrentSlots[0]);
+            Destroy(obj);
         }
+
         CurrentSlots.Clear();
         UpdateInventory();
     }
