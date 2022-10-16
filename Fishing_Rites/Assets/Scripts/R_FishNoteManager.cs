@@ -18,16 +18,16 @@ public class R_FishNoteManager : MonoBehaviour
     public TMP_Text MultiplierDisplay;
 
     public GameObject FishSpriteParent;
+    public string FishMusic;
 
     private void Start()
     {
         StartCoroutine(StartCoordinator());
 
-
-        foreach (R_Note Note in Notes)
+        /*foreach (R_Note Note in Notes)
         {
             NoteQueue.Enqueue(SpawnNote(Note));
-        }
+        }*/
 
         ScoreDisplay.text = "Score: " + Score.ToString();
         MultiplierDisplay.text = "x" + Multiplier.ToString();
@@ -53,9 +53,11 @@ public class R_FishNoteManager : MonoBehaviour
 
     public void LoadFish(R_Fish Fish)
     {
+        FishMusic = Fish.FishMusic;
         GameObject FishCharacter = Instantiate(Fish.FishToFightPrefab);
         FishCharacter.transform.parent = FishSpriteParent.transform;
         FishCharacter.transform.localPosition = Vector3.zero;
+
 
         Notes.Clear();
         for(int i = 0; i < Fish.Notes.Count; i++)
@@ -82,8 +84,7 @@ public class R_FishNoteManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         StartCoroutine(CoroutineCoordinator());
-        FindObjectOfType<AudioManager>().Play("Fish1");
-
+        FindObjectOfType<AudioManager>().Play(FishMusic);
     }
 
     IEnumerator CoroutineCoordinator()
