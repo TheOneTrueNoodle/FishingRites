@@ -11,6 +11,11 @@ public class J_Cultist : MonoBehaviour
         textbox.SetActive(true);
     }
 
+    void OnTriggerStay2D(Collider2D col)
+    {
+        textbox.SetActive(true);
+    }
+
     void OnTriggerExit2D(Collider2D col)
     {
         textbox.SetActive(false);
