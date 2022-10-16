@@ -140,6 +140,8 @@ public class R_InventoryManager : MonoBehaviour
         }
 
         Scene currentScene = SceneManager.GetActiveScene();
+        Destroy(GameObject.Find("EventSystem"));
+        Destroy(GameObject.Find("Main Camera"));
 
         if (transition != null) { transition.SetTrigger("Start"); }
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(CombatScene, LoadSceneMode.Additive);

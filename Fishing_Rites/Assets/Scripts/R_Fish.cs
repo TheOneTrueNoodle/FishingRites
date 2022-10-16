@@ -9,6 +9,7 @@ public class R_Fish
     public List<string> RequiredItems;
     public Sprite FishSprite;
     public GameObject FishToFightPrefab;
+    public string FishMusic;
 
     public List<R_Note> Notes;
 }

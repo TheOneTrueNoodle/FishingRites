@@ -473,7 +473,6 @@ GameObject:
   m_Component:
   - component: {fileID: 139410544}
   - component: {fileID: 139410543}
-  - component: {fileID: 139410542}
   - component: {fileID: 139410545}
   m_Layer: 0
   m_Name: Main Camera
@@ -482,14 +481,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &139410542
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139410541}
-  m_Enabled: 1
 --- !u!20 &139410543
 Camera:
   m_ObjectHideFlags: 0
@@ -2978,65 +2969,42 @@ MonoBehaviour:
     - Plat 1
     FishSprite: {fileID: 21300000, guid: e87e90f0f470b3848b9eee95453e7f2f, type: 3}
     FishToFightPrefab: {fileID: 2540440092856939138, guid: e4fde079f7e5b6f4f98ca09436169941, type: 3}
+    FishMusic: Fish1
     Notes:
-    - Length: 2
-      NoteSpeed: 4
-      WaitTime: 2
-    - Length: 0.5
-      NoteSpeed: 4
-      WaitTime: 0.5
-    - Length: 0.5
-      NoteSpeed: 4
-      WaitTime: 0.5
-    - Length: 0.5
-      NoteSpeed: 4
-      WaitTime: 0.5
-    - Length: 3
-      NoteSpeed: 4
-      WaitTime: 2
-    - Length: 0
-      NoteSpeed: 4
-      WaitTime: 0.3
-    - Length: 0
-      NoteSpeed: 4
-      WaitTime: 0.3
-    - Length: 0
-      NoteSpeed: 4
-      WaitTime: 0.3
-    - Length: 0
-      NoteSpeed: 4
-      WaitTime: 1
-    - Length: 4
-      NoteSpeed: 4
-      WaitTime: 4
     - Length: 5
       NoteSpeed: 4
-      WaitTime: 5
-    - Length: 0.5
+      WaitTime: 1.5
+    - Length: 5
       NoteSpeed: 4
-      WaitTime: 0.5
-    - Length: 0.5
+      WaitTime: 1.5
+    - Length: 5
+      NoteSpeed: 4
+      WaitTime: 1.5
+    - Length: 5
+      NoteSpeed: 4
+      WaitTime: 1.5
+    - Length: 2
       NoteSpeed: 4
       WaitTime: 1
     - Length: 2
       NoteSpeed: 4
-      WaitTime: 2
-    - Length: 3
-      NoteSpeed: 4
-      WaitTime: 3
+      WaitTime: 1
     - Length: 2
       NoteSpeed: 4
-      WaitTime: 0.5
-    - Length: 4
+      WaitTime: 1
+    - Length: 2
       NoteSpeed: 4
-      WaitTime: 4
-    - Length: 6
+      WaitTime: 1
+    - Length: 5
       NoteSpeed: 4
-      WaitTime: 6
-    - Length: 0.5
+      WaitTime: 1.5
+    - Length: 5
       NoteSpeed: 4
-      WaitTime: 0.5
-    - Length: 10
+      WaitTime: 1.5
+    - Length: 1.5
+      NoteSpeed: 4
+      WaitTime: 1
+    - Length: 2
       NoteSpeed: 4
       WaitTime: 1
   CombatScene: Ryan Combat Test Scene
