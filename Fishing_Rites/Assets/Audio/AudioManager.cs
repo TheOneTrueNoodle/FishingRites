@@ -12,10 +12,10 @@ public class AudioManager : MonoBehaviour
         source = GetComponent<AudioSource>();
     }
 
-    /*public void Start()
+   public void Start()
     {
-       Play("Fish1");
-    }*/
+       Play("Overworld Theme");
+    }
 
     public void Play(string name)
     {
