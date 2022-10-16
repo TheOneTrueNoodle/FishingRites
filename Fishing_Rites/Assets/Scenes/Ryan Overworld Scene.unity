@@ -2968,7 +2968,82 @@ MonoBehaviour:
     FishSprite: {fileID: 21300000, guid: 38c34e360c49fab49af7e712c876294a, type: 3}
     FishToFightPrefab: {fileID: 2479636368257181950, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
     FishMusic: CthunaTheme
-    Notes: []
+    Notes:
+    - Length: 2
+      NoteSpeed: 20
+      WaitTime: 0.5
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 0.5
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 1
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 0.5
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 1
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 0.5
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 1
+    - Length: 2
+      NoteSpeed: 12
+      WaitTime: 0.4
+    - Length: 2
+      NoteSpeed: 12
+      WaitTime: 0.4
+    - Length: 2
+      NoteSpeed: 12
+      WaitTime: 1.2
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 0.5
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 1.2
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 0.5
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 1.2
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 0.5
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 0.5
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 0.5
+    - Length: 2
+      NoteSpeed: 10
+      WaitTime: 0.5
+    - Length: 8
+      NoteSpeed: 10
+      WaitTime: 1.5
+    - Length: 8
+      NoteSpeed: 10
+      WaitTime: 1.5
+    - Length: 8
+      NoteSpeed: 10
+      WaitTime: 1.5
+    - Length: 8
+      NoteSpeed: 10
+      WaitTime: 1.5
+    - Length: 8
+      NoteSpeed: 10
+      WaitTime: 1.5
+    - Length: 8
+      NoteSpeed: 10
+      WaitTime: 1.5
+    - Length: 10
+      NoteSpeed: 10
+      WaitTime: 1.5
   FishSprite: {fileID: 1604258148}
   DefaultFish:
   - Name: "PumpkinSpiceCarp\xE9"
