@@ -1400,6 +1400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pumpkinFish
       objectReference: {fileID: 0}
+    - target: {fileID: 2540440092856939138, guid: e4fde079f7e5b6f4f98ca09436169941, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e4fde079f7e5b6f4f98ca09436169941, type: 3}
