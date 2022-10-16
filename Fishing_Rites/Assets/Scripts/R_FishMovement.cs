@@ -28,6 +28,10 @@ public class R_FishMovement : MonoBehaviour
             {
                 GFX.transform.localScale = new Vector3(-1, 1, 1);
             }
+            else if(transform.position.x >= NextPos.x)
+            {
+                GFX.transform.localScale = new Vector3(1, 1, 1);
+            }
             transform.position = Vector2.MoveTowards(transform.position, NextPos, currentMoveSpeed * Time.deltaTime);
         }
         else
