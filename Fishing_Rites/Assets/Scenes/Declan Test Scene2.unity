@@ -156,6 +156,7 @@ MonoBehaviour:
   RightMaxX: 7.5
   MaxMoveSpeed: 5
   MinMoveSpeed: 1
+  GFX: {fileID: 1949389348}
 --- !u!4 &89208175
 Transform:
   m_ObjectHideFlags: 0

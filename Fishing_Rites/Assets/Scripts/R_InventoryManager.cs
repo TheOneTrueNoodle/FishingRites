@@ -33,10 +33,6 @@ public class R_InventoryManager : MonoBehaviour
         {
             OpenInventory();
         }
-        else if(Input.GetKeyDown(KeyCode.Space))
-        {
-            CloseInventroy();
-        }
     }
 
     public void UpdateFishHunt()
@@ -80,7 +76,17 @@ public class R_InventoryManager : MonoBehaviour
     {
         FindObjectOfType<R_OverworldPlayerMovement>().CanMove = false;
         InventoryUI.SetActive(true);
-        InventoryActive = true;
+        InventoryActive = true; 
+        foreach (R_RitualSlot rSlot in RitualSlot)
+        {
+            rSlot.RemoveItem();
+        }
+
+        foreach (GameObject slot in CurrentSlots)
+        {
+            CurrentSlots.Remove(slot);
+            Destroy(slot);
+        }
         UpdateInventory();
     }
     public void CloseInventroy()

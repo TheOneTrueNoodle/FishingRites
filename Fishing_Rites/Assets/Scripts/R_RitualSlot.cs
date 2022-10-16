@@ -9,9 +9,9 @@ public class R_RitualSlot : MonoBehaviour
     public R_Item Item;
     public bool HasItem;
 
-    [SerializeField] private Image ItemImage;
+    public Image ItemImage;
     private R_InventoryManager IM;
-    [SerializeField] private GameObject RemoveItemButton;
+    public GameObject RemoveItemButton;
 
     private void Start()
     {
