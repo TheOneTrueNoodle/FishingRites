@@ -392,47 +392,84 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NotePrefab: {fileID: 2357419519865653448, guid: fc09672136bdf8c4f8c216143dc5eab7, type: 3}
   Notes:
-  - Length: 5
-    NoteSpeed: 4
-    WaitTime: 1.5
-  - Length: 5
-    NoteSpeed: 4
-    WaitTime: 1.5
-  - Length: 5
-    NoteSpeed: 4
-    WaitTime: 1.5
-  - Length: 5
-    NoteSpeed: 4
-    WaitTime: 1.5
   - Length: 2
-    NoteSpeed: 4
+    NoteSpeed: 10
+    WaitTime: 0.5
+  - Length: 2
+    NoteSpeed: 10
+    WaitTime: 2
+  - Length: 2
+    NoteSpeed: 10
+    WaitTime: 0.5
+  - Length: 2
+    NoteSpeed: 10
     WaitTime: 1
   - Length: 2
-    NoteSpeed: 4
+    NoteSpeed: 10
+    WaitTime: 0.5
+  - Length: 2
+    NoteSpeed: 10
     WaitTime: 1
   - Length: 2
-    NoteSpeed: 4
-    WaitTime: 1
+    NoteSpeed: 15
+    WaitTime: 0.4
   - Length: 2
-    NoteSpeed: 4
-    WaitTime: 1
-  - Length: 5
-    NoteSpeed: 4
+    NoteSpeed: 15
+    WaitTime: 0.4
+  - Length: 2
+    NoteSpeed: 15
+    WaitTime: 1.2
+  - Length: 2
+    NoteSpeed: 10
+    WaitTime: 0.5
+  - Length: 2
+    NoteSpeed: 10
+    WaitTime: 1.2
+  - Length: 2
+    NoteSpeed: 10
+    WaitTime: 0.5
+  - Length: 2
+    NoteSpeed: 10
+    WaitTime: 1.2
+  - Length: 2
+    NoteSpeed: 10
+    WaitTime: 0.5
+  - Length: 2
+    NoteSpeed: 10
+    WaitTime: 0.5
+  - Length: 2
+    NoteSpeed: 10
+    WaitTime: 0.5
+  - Length: 2
+    NoteSpeed: 10
+    WaitTime: 0.5
+  - Length: 8
+    NoteSpeed: 10
     WaitTime: 1.5
-  - Length: 5
-    NoteSpeed: 4
+  - Length: 8
+    NoteSpeed: 10
     WaitTime: 1.5
-  - Length: 1.5
-    NoteSpeed: 4
-    WaitTime: 1
-  - Length: 2
-    NoteSpeed: 4
-    WaitTime: 1
+  - Length: 8
+    NoteSpeed: 10
+    WaitTime: 1.5
+  - Length: 8
+    NoteSpeed: 10
+    WaitTime: 1.5
+  - Length: 8
+    NoteSpeed: 10
+    WaitTime: 1.5
+  - Length: 8
+    NoteSpeed: 10
+    WaitTime: 1.5
+  - Length: 8
+    NoteSpeed: 10
+    WaitTime: 1.5
   Score: 0
   Multiplier: 1
   ScoreDisplay: {fileID: 1876842238}
   MultiplierDisplay: {fileID: 525751624}
   FishSpriteParent: {fileID: 1426854244}
+  FishMusic: Cthuna
 --- !u!1 &525751622
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +708,82 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1001 &603482547
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 1426854245}
+    m_Modifications:
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.41727442
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.41727442
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.41727442
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479636368257181950, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+      propertyPath: m_Name
+      value: Cthuna
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+--- !u!4 &655991111 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2479636368257181949, guid: 2d5fb747118d5274685a8b208bb3a9b5, type: 3}
+  m_PrefabInstance: {fileID: 603482547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &657576518
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +846,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftMaxX: -7.5
   RightMaxX: 7.5
-  MoveSpeed: 3
+  MaxMoveSpeed: 5
+  MinMoveSpeed: 1
 --- !u!4 &753701184
 Transform:
   m_ObjectHideFlags: 0
@@ -1257,6 +1371,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 274443743}
+  - {fileID: 655991111}
   m_Father: {fileID: 753701184}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1402,7 +1517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2540440092856939138, guid: e4fde079f7e5b6f4f98ca09436169941, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1717,7 +1832,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025069690}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2025069692
 Camera:
   m_ObjectHideFlags: 0
@@ -1784,13 +1899,17 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 73349522, guid: 3c677509dcb585f4f8f142845cddf692, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 544c68cdc328d0c4d994cb433c653af1, type: 3}
     - target: {fileID: 4492322743758435325, guid: 3c677509dcb585f4f8f142845cddf692, type: 3}
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 6538397235223487445, guid: 3c677509dcb585f4f8f142845cddf692, type: 3}
       propertyPath: sounds.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6538397235223487445, guid: 3c677509dcb585f4f8f142845cddf692, type: 3}
       propertyPath: sounds.Array.data[0].clip
@@ -1801,12 +1920,24 @@ PrefabInstance:
       value: Fish1
       objectReference: {fileID: 0}
     - target: {fileID: 6538397235223487445, guid: 3c677509dcb585f4f8f142845cddf692, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 544c68cdc328d0c4d994cb433c653af1, type: 3}
+    - target: {fileID: 6538397235223487445, guid: 3c677509dcb585f4f8f142845cddf692, type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: Cthuna
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538397235223487445, guid: 3c677509dcb585f4f8f142845cddf692, type: 3}
       propertyPath: sounds.Array.data[0].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6538397235223487445, guid: 3c677509dcb585f4f8f142845cddf692, type: 3}
       propertyPath: sounds.Array.data[0].volume
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538397235223487445, guid: 3c677509dcb585f4f8f142845cddf692, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.215
       objectReference: {fileID: 0}
     - target: {fileID: 8366235821834378074, guid: 3c677509dcb585f4f8f142845cddf692, type: 3}
       propertyPath: m_RootOrder
