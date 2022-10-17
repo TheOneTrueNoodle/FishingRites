@@ -60,6 +60,7 @@ public class R_NoteObject : MonoBehaviour
 
     public void NoteFailed()
     {
+        NoteHeld = false;
         NoteManager.ResetMultiplier();
         Destroy(gameObject);
     }
