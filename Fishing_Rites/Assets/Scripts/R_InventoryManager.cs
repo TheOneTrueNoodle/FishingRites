@@ -19,6 +19,7 @@ public class R_InventoryManager : MonoBehaviour
     [Header("Huntable Fish")]
     public List<R_Fish> Fish;
     [SerializeField] private Image FishSprite;
+    [SerializeField] private Sprite DefaultImage;
     private R_Fish FishToHunt;
     private bool FoundFish;
     public List<R_Fish> DefaultFish;
@@ -37,7 +38,7 @@ public class R_InventoryManager : MonoBehaviour
 
     public void UpdateFishHunt()
     {
-        FishSprite.sprite = null;
+        FishSprite.sprite = DefaultImage;
         FoundFish = false;
         FishToHunt = null;
 
@@ -63,7 +64,7 @@ public class R_InventoryManager : MonoBehaviour
             }
             else
             {
-                FishSprite.sprite = null;
+                FishSprite.sprite = DefaultImages;
                 FoundFish = false;
                 FishToHunt = null;
             }
@@ -128,7 +129,7 @@ public class R_InventoryManager : MonoBehaviour
             Destroy(obj);
         }
 
-        FishSprite.sprite = null;
+        FishSprite.sprite = DefaultImage;
         FoundFish = false;
         FishToHunt = null;
     }
