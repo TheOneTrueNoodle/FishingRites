@@ -24,6 +24,15 @@ public class R_OverworldPlayerMovement : MonoBehaviour
     {
         MoveInput.x = Input.GetAxisRaw("Horizontal");
         MoveInput.y = Input.GetAxisRaw("Vertical");
+
+        if(MoveInput.x > 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if(MoveInput.x < 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     private void FixedUpdate()
