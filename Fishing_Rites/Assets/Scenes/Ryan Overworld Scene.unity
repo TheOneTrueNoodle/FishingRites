@@ -2949,7 +2949,7 @@ MonoBehaviour:
     ItemNum: 0
   - ItemName: Forbidden
     Type: 1
-    ItemSprite: {fileID: 21300000, guid: 6c6843ff42195834ea1505c04882a7b8, type: 3}
+    ItemSprite: {fileID: 21300000, guid: a095523f84b92294e80f841ec9fe499a, type: 3}
     ItemNum: 0
   InventoryUI: {fileID: 730046446}
   ItemParent: {fileID: 1468400868}
@@ -6053,6 +6053,7 @@ MonoBehaviour:
       NoteSpeed: 20
       WaitTime: 0.1
   FishSprite: {fileID: 1604258148}
+  DefaultImage: {fileID: 21300000, guid: 988cd189ca5c7534b8c00218fd4904fb, type: 3}
   DefaultFish:
   - Name: "PumpkinSpiceCarp\xE9"
     RequiredItems:
@@ -7723,7 +7724,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7130299123424455787}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
