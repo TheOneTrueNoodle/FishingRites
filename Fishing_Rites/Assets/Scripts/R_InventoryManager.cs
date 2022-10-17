@@ -48,7 +48,7 @@ public class R_InventoryManager : MonoBehaviour
             {
                 foreach(string Item in Fish[i].RequiredItems)
                 {
-                    if(RitualSlot[j].Item.ItemName == Item)
+                    if(RitualSlot[j].Item != null && RitualSlot[j].Item.ItemName == Item)
                     {
                         ItemsRequired--;
                     }
@@ -72,7 +72,6 @@ public class R_InventoryManager : MonoBehaviour
 
     public void UpdateInventory()
     {
-        UpdateFishHunt();
         for (int i = 0; i < Items.Count; i++)
         {
             GameObject Item = Instantiate(InventorySlotPrefab);
@@ -147,12 +146,14 @@ public class R_InventoryManager : MonoBehaviour
             Destroy(obj);
         }
         CurrentSlots.Clear();
+        UpdateFishHunt();
         UpdateInventory();
     }
 
     public void AddItem(R_Item Item)
     {
         Items.Add(Item);
+        UpdateFishHunt();
 
         int NumLoops = CurrentSlots.Count;
 
