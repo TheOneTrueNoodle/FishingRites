@@ -64,7 +64,7 @@ public class R_InventoryManager : MonoBehaviour
             }
             else
             {
-                FishSprite.sprite = DefaultImages;
+                FishSprite.sprite = DefaultImage;
                 FoundFish = false;
                 FishToHunt = null;
             }
